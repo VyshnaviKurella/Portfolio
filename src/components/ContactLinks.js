@@ -5,7 +5,7 @@ import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
 const ContactLinks = () => {
   return (
     <ContactContainer>
-      <h1>Contact Me</h1>
+      <h1>"Ready to Hustle – Let’s Talk Opportunities!"</h1>
       <Links>
         <a href="mailto:vyshnavk@uci.edu">
           <FaEnvelope size={30} /> Email Me

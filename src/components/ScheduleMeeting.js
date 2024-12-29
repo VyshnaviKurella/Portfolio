@@ -5,7 +5,7 @@ import styled from 'styled-components';
 const ScheduleMeeting = () => {
   return (
     <ScheduleContainer>
-      <h1>Schedule a Meeting</h1>
+      <h1>Schedule a Chat</h1>
       <InlineWidgetWrapper>
       <InlineWidget url="https://calendly.com/vyshnavk-uci"
        />

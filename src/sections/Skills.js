@@ -1,18 +1,43 @@
 import React from 'react';
 import styled from 'styled-components';
-import { FaReact, FaNodeJs, FaPython, FaGitAlt } from 'react-icons/fa';
-import { SiTypescript, SiJavascript, SiGraphql, SiDocker } from 'react-icons/si';
+import { FaJava, FaJsSquare, FaPython, FaReact, FaAngular, FaNodeJs,FaVuejs, FaDatabase  } from 'react-icons/fa';
+import { SiTypescript, SiGraphql, SiRedux, SiBootstrap, SiKubernetes, SiDocker, SiJenkins, SiGit, SiGithub, SiPostman, SiMocha, SiJest, SiWebpack, SiYarn, SiNginx, SiJira,SiVisualstudiocode , SiMysql} from 'react-icons/si';
 import { motion } from 'framer-motion';
 
 const skills = [
-  { name: "React", icon: <FaReact /> },
-  { name: "Node.js", icon: <FaNodeJs /> },
-  { name: "Python", icon: <FaPython /> },
+  { name: "Java", icon: <FaJava /> },
+  { name: "JavaScript", icon: <FaJsSquare /> },
   { name: "TypeScript", icon: <SiTypescript /> },
-  { name: "JavaScript", icon: <SiJavascript /> },
+  { name: "Python", icon: <FaPython /> },
+  { name: "React.js", icon: <FaReact /> },
+  { name: "AngularJS", icon: <FaAngular /> },
+  { name: "Vue.js", icon: <FaVuejs /> }, // You can use another icon or custom one for Vue.js
+  { name: "Redux", icon: <SiRedux /> },
+  { name: "Bootstrap", icon: <SiBootstrap /> },
+  // { name: "Material UI", icon: <SiMaterialUi /> },
+  { name: "Node.js", icon: <FaNodeJs /> },
+  { name: "Express.js", icon: <FaNodeJs /> }, // Use the same Node.js icon, since Express is often used with it
   { name: "GraphQL", icon: <SiGraphql /> },
+  { name: "MongoDB", icon: <FaDatabase /> },
+  { name: "SQL", icon: <SiMysql /> }, // Placeholder for SQL icon, adjust if needed
+  // { name: "Amazon EC2", icon: <SiAmazonaws /> }, // Use AWS icons, if available
+  { name: "Jenkins", icon: <SiJenkins /> },
+  { name: "Kubernetes", icon: <SiKubernetes /> },
   { name: "Docker", icon: <SiDocker /> },
+  { name: "Git", icon: <SiGit /> },
+  { name: "GitHub", icon: <SiGithub /> },
+  { name: "Postman", icon: <SiPostman /> },
+  { name: "Mocha", icon: <SiMocha /> },
+  // { name: "Jasmine", icon: <SiJasmine /> }, // Adjust if you have an icon for Jasmine
+  { name: "Jest", icon: <SiJest /> },
+  { name: "VS Code", icon: <SiVisualstudiocode /> },
+  // { name: "Eclipse", icon: <SiEclipsemosquitto /> },
+  { name: "Webpack", icon: <SiWebpack /> },
+  { name: "Yarn", icon: <SiYarn /> },
+  { name: "Nginx", icon: <SiNginx /> },
+  { name: "Jira", icon: <SiJira /> },
 ];
+
 
 const Skills = () => {
   return (

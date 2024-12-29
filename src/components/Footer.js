@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <FooterContainer>
       <FooterContent>
-        <Tagline>Portfolio over, but the journey starts here. Let’s connect! 🌟</Tagline>
+        <Tagline>"That’s a Wrap on the Portfolio – Let’s Create the Future! 🌟</Tagline>
         <Copyright>
           &copy; {new Date().getFullYear()} Vyshnavi Kurella. All rights reserved.
         </Copyright>

@@ -45,6 +45,11 @@ const Card = styled.div`
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Ensures content is evenly spaced */
+  height: 35vh;
+  overflow: hidden;
 
   &:hover {
     transform: scale(1.02);

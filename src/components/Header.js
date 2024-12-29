@@ -1,21 +1,42 @@
 import React, { useState } from 'react';
-// import { a } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
-  const ToggleMenu = () => {
+  const toggleMenu = () => {
     setIsOpen(!isOpen);
+  };
+
+  const handleNavigation = (id) => {
+    if (location.pathname === '/') {
+      // If already on the Home page, scroll to section
+      const section = document.getElementById(id);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // Navigate to Home with hash
+      navigate(`/#${id}`);
+    }
   };
 
   return (
     <NavBar>
       <Logo>
-        <a href="\">Vyshnavi Kurella</a>
+        <motion.div
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.95 }}
+          onClick={() => handleNavigation('home')}
+        >
+          Vyshnavi Kurella
+        </motion.div>
       </Logo>
-      <Hamburger onClick={ToggleMenu}>
+      <Hamburger onClick={toggleMenu}>
         <span />
         <span />
         <span />
@@ -24,26 +45,30 @@ const Header = () => {
         <motion.li
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
+          onClick={() => handleNavigation('projects')}
         >
-          <a href="#projects">Projects</a>
+          Projects
         </motion.li>
         <motion.li
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
+          onClick={() => handleNavigation('skills')}
         >
-          <a href="#skills">Skills</a>
+          Skills
         </motion.li>
         <motion.li
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
+          onClick={() => handleNavigation('experience')}
         >
-          <a href="#experience">Experience</a>
+          Experience
         </motion.li>
         <motion.li
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
+          onClick={() => handleNavigation('contact')}
         >
-            <a href="#contact" >Contact</a>
+          Contact
         </motion.li>
       </Navas>
     </NavBar>
@@ -51,6 +76,8 @@ const Header = () => {
 };
 
 export default Header;
+
+
 
 const NavBar = styled.nav`
   display: flex;
