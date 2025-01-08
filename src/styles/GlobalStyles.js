@@ -10,7 +10,7 @@ const GlobalStyles = createGlobalStyle`
 
 body {
 font-family : 'Montserrat',sans-serif;
-background-color: ${({theme}) => theme.colors.background};
+background-color: ${({theme}) => theme.colors.backgrounds.background1};
 color: ${({theme})=> theme.colors.text};
 // cursor:none
 }

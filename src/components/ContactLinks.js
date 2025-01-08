@@ -27,7 +27,7 @@ export default ContactLinks;
 const ContactContainer = styled.div`
   padding: 4rem 2rem;
   text-align: center;
-  background-color: ${({ theme }) => theme.colors.background};
+  background-color: ${({ theme }) => theme.colors.backgrounds.background1};
 
   h1 {
     font-size: 2.5rem;

@@ -127,10 +127,6 @@ const Projects = () => {
             x: index % 2 === 0 ? '-100vw' : '100vw', // Slide in alternately from left and right
             opacity: 0,
           }}
-          // whileInView={{
-          //   x: 0,
-          //   opacity: 1,
-          // }}
           whileInView={{ x: 0, opacity: 1, viewport: { once: false, amount: 0.5 } }}
           transition={{
             type: 'spring',
@@ -138,7 +134,6 @@ const Projects = () => {
             damping: 20,
             delay: 0.35 * index, // Stagger animation for each card
           }}
-          // viewport={{ once: false, amount: 0.2 }} 
           animate={{
            transform: 'translateX(0)',
           // x:0,
@@ -160,8 +155,8 @@ const Projects = () => {
       {isHovering && (
         <ViewText
           style={{
-            top: `${cursorPosition.y + 15}px`,
-            left: `${cursorPosition.x + 15}px`,
+            top: `${cursorPosition.y - 35}px`,
+            left: `${cursorPosition.x -30 }px`,
           }}
         >
           View
@@ -207,7 +202,8 @@ export default Projects;
 const ProjectsContainer = styled.div`
   padding: 4rem 8rem;
   text-align: center;
-  background-color: ${({ theme }) => theme.colors.background};
+  background-color: ${({ theme }) => theme.colors.backgrounds.background1};
+  z-index: 9990
 `;
 
 const Title = styled.h1`
@@ -229,9 +225,9 @@ const ViewText = styled.div`
   position: fixed;
   font-size: 1.2rem;
   color: black;
-  background-color: #F7B7A3;
-  padding: 5px 10px;
-  border-radius: 5px;
+  background-color: ${({ theme }) => theme.colors.accentText};
+  padding: 20px 15px;
+  border-radius: 50%;
   pointer-events: none;
   z-index: 9999;
   white-space: nowrap;

@@ -1,6 +1,6 @@
 import React,{useEffect} from 'react';
 import styled from 'styled-components';
-import HeroSection from '../components/herosec';
+import HeroSection from '../sections/herosec';
 import Projects from '../sections/Projects';
 import Skills from '../sections/Skills'
 import Experience from '../sections/Experience';

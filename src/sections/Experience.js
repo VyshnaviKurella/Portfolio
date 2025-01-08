@@ -128,7 +128,7 @@ const Experience = () => {
               company={exp.company}
               duration={exp.duration}
               type="experience"
-              onClick={() => openPopup(exp)} // Open popup when card is clicked
+              onClick={() => openPopup(exp)} 
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             />
@@ -138,8 +138,8 @@ const Experience = () => {
       {isHovering && (
         <ViewText
           style={{
-            top: `${cursorPosition.y + 15}px`,
-            left: `${cursorPosition.x + 15}px`,
+            top: `${cursorPosition.y - 35}px`,
+            left: `${cursorPosition.x -30}px`,
           }}
         >
           View
@@ -181,7 +181,7 @@ export default Experience;
 const ExperienceContainer = styled.div`
   padding: 4rem 14rem;
   text-align: center;
-  background-color: ${({ theme }) => theme.colors.background};
+  background-color: ${({ theme }) => theme.colors.backgrounds.background1};
 `;
 const Title = styled.h1`
   font-size: 2.5rem;
@@ -205,6 +205,7 @@ const PopupOverlay = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index:9999;
 `;
 
 const Popup = styled.div`
@@ -233,9 +234,9 @@ const ViewText = styled.div`
   position: fixed;
   font-size: 1.2rem;
   color: black;
-  background-color: #F7B7A3;
-  padding: 5px 10px;
-  border-radius: 5px;
+  background-color: ${({ theme }) => theme.colors.accentText};
+  padding: 20px 15px;
+  border-radius: 50%;
   pointer-events: none;
   z-index: 9999;
   white-space: nowrap;

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import woman from '../assets/woman.png';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,6 +27,7 @@ const Header = () => {
   };
 
   return (
+    <>
     <NavBar>
       <Logo>
         <motion.div
@@ -33,7 +35,7 @@ const Header = () => {
           whileTap={{ scale: 0.95 }}
           onClick={() => handleNavigation('home')}
         >
-          Vyshnavi Kurella
+         <img src={woman} alt="Home" />
         </motion.div>
       </Logo>
       <Hamburger onClick={toggleMenu}>
@@ -72,6 +74,8 @@ const Header = () => {
         </motion.li>
       </Navas>
     </NavBar>
+    <PatternContainer/>
+    </>
   );
 };
 
@@ -83,7 +87,7 @@ const NavBar = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 0.25rem 2rem 0rem 0.5rem;
   background-color: ${({ theme }) => theme.colors.primary};
   position: sticky;
   top: 0;
@@ -92,8 +96,9 @@ const NavBar = styled.nav`
 `;
 
 const Logo = styled.div`
-  font-size: 1.5rem;
+  font-size: 0.5rem;
   font-weight: bold;
+  cursor:pointer;
   a {
     color: ${({ theme }) => theme.colors.text};
     text-decoration: none;
@@ -104,6 +109,7 @@ const Navas = styled.ul`
   display: flex;
   gap: 2rem;
   list-style: none;
+  cursor:pointer;
 
   li {
     a {
@@ -147,4 +153,7 @@ const Hamburger = styled.div`
   @media (max-width: 768px) {
     display: flex;
   }
+`;
+const PatternContainer = styled.div`
+ 
 `;

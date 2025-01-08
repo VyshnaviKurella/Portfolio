@@ -82,7 +82,7 @@ export default Skills;
 const SkillsContainer = styled.div`
   margin: 8rem 2rem;
   text-align: center;
-  background-color: ${({ theme }) => theme.colors.background};
+  background-color: ${({ theme }) => theme.colors.backgrounds.background1};
   color: ${({ theme }) => theme.colors.text};
   overflow:hidden;
 

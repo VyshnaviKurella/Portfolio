@@ -19,7 +19,7 @@ export default ScheduleMeeting;
 
 const ScheduleContainer = styled.div`
   padding: 3rem 2rem;
-  background-color: ${({ theme }) => theme.colors.background};
+  background-color: ${({ theme }) => theme.colors.backgrounds.background1};
   text-align: center;
 
   h1 {
