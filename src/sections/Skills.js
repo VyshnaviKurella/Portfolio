@@ -1,8 +1,36 @@
-import React from 'react';
-import styled from 'styled-components';
-import { FaJava, FaJsSquare, FaPython, FaReact, FaAngular, FaNodeJs,FaVuejs, FaDatabase  } from 'react-icons/fa';
-import { SiTypescript, SiGraphql, SiRedux, SiBootstrap, SiKubernetes, SiDocker, SiJenkins, SiGit, SiGithub, SiPostman, SiMocha, SiJest, SiWebpack, SiYarn, SiNginx, SiJira,SiVisualstudiocode , SiMysql} from 'react-icons/si';
-import { motion } from 'framer-motion';
+import React from "react";
+import styled from "styled-components";
+import {
+  FaJava,
+  FaJsSquare,
+  FaPython,
+  FaReact,
+  FaAngular,
+  FaNodeJs,
+  FaVuejs,
+  FaDatabase,
+} from "react-icons/fa";
+import {
+  SiTypescript,
+  SiGraphql,
+  SiRedux,
+  SiBootstrap,
+  SiKubernetes,
+  SiDocker,
+  SiJenkins,
+  SiGit,
+  SiGithub,
+  SiPostman,
+  SiMocha,
+  SiJest,
+  SiWebpack,
+  SiYarn,
+  SiNginx,
+  SiJira,
+  SiVisualstudiocode,
+  SiMysql,
+} from "react-icons/si";
+import { motion } from "framer-motion";
 
 const skills = [
   { name: "Java", icon: <FaJava /> },
@@ -16,10 +44,10 @@ const skills = [
   { name: "Bootstrap", icon: <SiBootstrap /> },
   // { name: "Material UI", icon: <SiMaterialUi /> },
   { name: "Node.js", icon: <FaNodeJs /> },
-  { name: "Express.js", icon: <FaNodeJs /> }, 
+  { name: "Express.js", icon: <FaNodeJs /> },
   { name: "GraphQL", icon: <SiGraphql /> },
   { name: "MongoDB", icon: <FaDatabase /> },
-  { name: "SQL", icon: <SiMysql /> }, 
+  { name: "SQL", icon: <SiMysql /> },
   // { name: "Amazon EC2", icon: <SiAmazonaws /> },
   { name: "Jenkins", icon: <SiJenkins /> },
   { name: "Kubernetes", icon: <SiKubernetes /> },
@@ -38,25 +66,24 @@ const skills = [
   { name: "Jira", icon: <SiJira /> },
 ];
 
-
 const Skills = () => {
   return (
     <SkillsContainer id="skills">
       <h1>My Skills</h1>
       <SkillWrapper>
         <SkillList>
-        {skills.map((skill, index) => (
-          <motion.div
-            key={skill.name}
-            whileHover={{ scale: 1.1 }}
-            transition={{ type: "spring", stiffness: 300 }}
-          >
-            <SkillCard>
-              <IconContainer>{skill.icon}</IconContainer>
-              <SkillName>{skill.name}</SkillName>
-            </SkillCard>
-          </motion.div>
-        ))}
+          {skills.map((skill, index) => (
+            <motion.div
+              key={skill.name}
+              whileHover={{ scale: 1.1 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              <SkillCard>
+                <IconContainer>{skill.icon}</IconContainer>
+                <SkillName>{skill.name}</SkillName>
+              </SkillCard>
+            </motion.div>
+          ))}
         </SkillList>
         <SkillList>
           {skills.map((skill, index) => (
@@ -84,7 +111,7 @@ const SkillsContainer = styled.div`
   text-align: center;
   background-color: ${({ theme }) => theme.colors.backgrounds.background1};
   color: ${({ theme }) => theme.colors.text};
-  overflow:hidden;
+  overflow: hidden;
 
   h1 {
     margin-bottom: 2rem;
@@ -97,11 +124,11 @@ const SkillWrapper = styled.div`
   display: flex;
   gap: 2rem;
   animation: scroll 15s linear infinite; /* Continuous scroll effect */
-   flex-direction: row;
+  flex-direction: row;
   align-items: center;
-  &:hover{
-  animation-play-state: paused;
-}
+  &:hover {
+    animation-play-state: paused;
+  }
   /* Animation for scrolling */
   @keyframes scroll {
     0% {

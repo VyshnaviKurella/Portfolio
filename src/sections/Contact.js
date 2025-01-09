@@ -1,7 +1,7 @@
-import React from 'react';
-import styled from 'styled-components';
-import ContactLinks from '../components/ContactLinks';
-import ScheduleMeeting from '../components/ScheduleMeeting';
+import React from "react";
+import styled from "styled-components";
+import ContactLinks from "../components/ContactLinks";
+import ScheduleMeeting from "../components/ScheduleMeeting";
 
 const ContactSection = () => {
   return (
@@ -17,7 +17,7 @@ export default ContactSection;
 
 const ContactContainer = styled.div`
   background-color: ${({ theme }) => theme.colors.background};
-  padding: 4rem 2rem;
+  padding: 1rem 1rem;
 `;
 
 const Divider = styled.hr`

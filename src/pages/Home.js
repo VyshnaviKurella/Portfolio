@@ -1,35 +1,31 @@
-import React,{useEffect} from 'react';
-import styled from 'styled-components';
-import HeroSection from '../sections/herosec';
-import Projects from '../sections/Projects';
-import Skills from '../sections/Skills'
-import Experience from '../sections/Experience';
-import Contact from '../sections/Contact';
-import { useLocation } from 'react-router-dom';
+import React, { useEffect } from "react";
+import styled from "styled-components";
+import HeroSection from "../sections/herosec";
+import Projects from "../sections/Projects";
+import Skills from "../sections/Skills";
+import Experience from "../sections/Experience";
+import Contact from "../sections/Contact";
+import { useLocation } from "react-router-dom";
 
+const Home = () => {
+  const location = useLocation();
 
-
-const Home =() =>{
-
-    const location = useLocation();
-
-    useEffect(() => {
-     
-      if (location.hash) {
-        const sectionId = location.hash.substring(1); 
-        const section = document.getElementById(sectionId);
-        if (section) {
-          section.scrollIntoView({ behavior: 'smooth' });
-        }
+  useEffect(() => {
+    if (location.hash) {
+      const sectionId = location.hash.substring(1);
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
       }
-    }, [location]);
-    return (
-        <>
-         <Section id="home">
+    }
+  }, [location]);
+  return (
+    <>
+      <Section id="home">
         <HeroSection />
       </Section>
-       
-       <Section id="skills">
+
+      <Section id="skills">
         <Skills />
       </Section>
       <Section id="experience">
@@ -41,13 +37,12 @@ const Home =() =>{
       <Section id="contact">
         <Contact />
       </Section>
-       </>
-    );
+    </>
+  );
 };
 
 export default Home;
 const Section = styled.section`
   // width:100vw
-  // min-height: 100vh; 
-  
+  // min-height: 100vh;
 `;

@@ -1,16 +1,14 @@
-import React from 'react';
-import { InlineWidget } from 'react-calendly';
-import styled from 'styled-components';
+import React from "react";
+import { InlineWidget } from "react-calendly";
+import styled from "styled-components";
 
 const ScheduleMeeting = () => {
   return (
     <ScheduleContainer>
       <h1>Schedule a Chat</h1>
       <InlineWidgetWrapper>
-      <InlineWidget url="https://calendly.com/vyshnavk-uci"
-       />
+        <InlineWidget url="https://calendly.com/vyshnavk-uci" />
       </InlineWidgetWrapper>
-
     </ScheduleContainer>
   );
 };
@@ -27,29 +25,25 @@ const ScheduleContainer = styled.div`
     color: ${({ theme }) => theme.colors.accent};
     margin-bottom: 2rem;
   }
- @media (max-width: 480px) {
-   padding:  0.25rem;
+  @media (max-width: 480px) {
+    padding: 0.25rem;
   }
-  
 `;
 const InlineWidgetWrapper = styled.div`
   width: 100%;
   max-width: 50vw;
   margin: 0 auto;
   height: 100%;
-  overflow:hidden;
-  min-height:600px;
-
+  overflow: hidden;
+  min-height: 600px;
 
   @media (max-width: 768px) {
     min-height: 500px;
-    max-width:70vw;
+    max-width: 70vw;
   }
 
   @media (max-width: 480px) {
     min-height: 400px;
-    max-width:80vw;
+    max-width: 80vw;
   }
 `;
-
-

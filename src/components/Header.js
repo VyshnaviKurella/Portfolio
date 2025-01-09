@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
-import styled from 'styled-components';
-import { motion } from 'framer-motion';
-import woman from '../assets/woman.png';
+import React, { useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
+import styled from "styled-components";
+import { motion } from "framer-motion";
+import woman from "../assets/woman.png";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,11 +14,11 @@ const Header = () => {
   };
 
   const handleNavigation = (id) => {
-    if (location.pathname === '/') {
+    if (location.pathname === "/") {
       // If already on the Home page, scroll to section
       const section = document.getElementById(id);
       if (section) {
-        section.scrollIntoView({ behavior: 'smooth' });
+        section.scrollIntoView({ behavior: "smooth" });
       }
     } else {
       // Navigate to Home with hash
@@ -28,64 +28,60 @@ const Header = () => {
 
   return (
     <>
-    <NavBar>
-      <Logo>
-        <motion.div
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-          onClick={() => handleNavigation('home')}
-        >
-         <img src={woman} alt="Home" />
-        </motion.div>
-      </Logo>
-      <Hamburger onClick={toggleMenu}>
-        <span />
-        <span />
-        <span />
-      </Hamburger>
-      <Navas $isOpen={isOpen}>
-      <motion.li
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-          onClick={() => handleNavigation('skills')}
-        >
-          Skills
-        </motion.li>
+      <NavBar>
+        <Logo>
+          <motion.div
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => handleNavigation("home")}
+          >
+            <img src={woman} alt="Home" />
+          </motion.div>
+        </Logo>
+        <Hamburger onClick={toggleMenu}>
+          <span />
+          <span />
+          <span />
+        </Hamburger>
+        <Navas $isOpen={isOpen}>
+          <motion.li
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => handleNavigation("skills")}
+          >
+            Skills
+          </motion.li>
 
-        <motion.li
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-          onClick={() => handleNavigation('experience')}
-        >
-          Experience
-        </motion.li>
-        
-        <motion.li
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-          onClick={() => handleNavigation('projects')}
-        >
-          Projects
-        </motion.li>
-        
-        
-        <motion.li
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-          onClick={() => handleNavigation('contact')}
-        >
-          Contact
-        </motion.li>
-      </Navas>
-    </NavBar>
-    
+          <motion.li
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => handleNavigation("experience")}
+          >
+            Experience
+          </motion.li>
+
+          <motion.li
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => handleNavigation("projects")}
+          >
+            Projects
+          </motion.li>
+
+          <motion.li
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => handleNavigation("contact")}
+          >
+            Contact
+          </motion.li>
+        </Navas>
+      </NavBar>
     </>
   );
 };
 
 export default Header;
-
-
 
 const NavBar = styled.nav`
   display: flex;
@@ -100,12 +96,16 @@ const NavBar = styled.nav`
 `;
 
 const Logo = styled.div`
-  font-size: 0.5rem;
+  // font-size: 0.5rem;
   font-weight: bold;
-  cursor:pointer;
-  a {
+  cursor: pointer;
+  padding: 5px a {
     color: ${({ theme }) => theme.colors.text};
     text-decoration: none;
+  }
+  img {
+    height: 50px;
+    width: auto;
   }
 `;
 
@@ -113,7 +113,7 @@ const Navas = styled.ul`
   display: flex;
   gap: 2rem;
   list-style: none;
-  cursor:pointer;
+  cursor: pointer;
   font-size: 1.1rem;
   font-weight: 600;
 
@@ -130,11 +130,11 @@ const Navas = styled.ul`
   }
 
   @media (max-width: 768px) {
-    display:  ${({ $isOpen }) => ($isOpen ? 'flex' : 'none')};
+    display: ${({ $isOpen }) => ($isOpen ? "flex" : "none")};
     flex-direction: column;
     gap: 1rem;
     position: absolute;
-    top:80%;
+    top: 80%;
     right: 0px;
     background: ${({ theme }) => theme.colors.accent};
     padding: 1rem;
@@ -159,4 +159,3 @@ const Hamburger = styled.div`
     display: flex;
   }
 `;
-

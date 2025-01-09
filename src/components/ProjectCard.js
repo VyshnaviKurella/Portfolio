@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 const ProjectCard = ({
   title,
@@ -10,15 +10,19 @@ const ProjectCard = ({
   duration,
   type,
   onClick,
-  onMouseEnter,  
+  onMouseEnter,
   onMouseLeave,
 }) => {
   return (
-    <Card onClick={onClick} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+    <Card
+      onClick={onClick}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+    >
       <CardHeader>
         <h3>{title}</h3>
-        {type === 'project' && tech && <p>{tech}</p>}
-        {type === 'experience' && (
+        {type === "project" && tech && <p>{tech}</p>}
+        {type === "experience" && (
           <>
             <p>{company}</p>
             <p>{role}</p>
@@ -55,20 +59,45 @@ const Card = styled.div`
     transform: scale(1.02);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   }
+
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+    height: auto;
+  }
+
+  @media (max-width: 480px) {
+    padding: 1rem;
+  }
 `;
 
 const CardHeader = styled.div`
   margin-bottom: 1rem;
- color: ${({ theme }) => theme.colors.text1};
+  color: ${({ theme }) => theme.colors.text1};
+  padding-top: 1rem;
   h3 {
     font-size: 1.8rem;
     font-weight: bold;
+
+    @media (max-width: 768px) {
+      font-size: 1.5rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 1.2rem;
+    }
   }
 
   p {
     font-size: 1rem;
-   
     margin: 0.5rem 0;
+
+    @media (max-width: 768px) {
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 0.8rem;
+    }
   }
 `;
 
@@ -78,5 +107,13 @@ const CardBody = styled.div`
   p {
     font-size: 1rem;
     color: ${({ theme }) => theme.colors.text1};
+
+    @media (max-width: 768px) {
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 0.8rem;
+    }
   }
 `;
