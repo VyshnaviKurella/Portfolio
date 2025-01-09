@@ -14,7 +14,8 @@ const theme ={
         primary: '#F4A261', // Warm orange for the primary color
         secondary: '#2A9D8F', // Teal for secondary elements
         accent: '#D4A5A5', // Soft rose for accents
-        text: '#264653', // Dark slate green for primary text
+        text1:'#F1FAEE',// for dark background
+        text: '#6F5B8E', 
         secondaryText: '#6D5B8E', // Muted purple for secondary text
         accentText: '#D4AF37', // Replaced with a rich gold for highlight text
         backgrounds: {

@@ -59,7 +59,7 @@ const Card = styled.div`
 
 const CardHeader = styled.div`
   margin-bottom: 1rem;
-
+ color: ${({ theme }) => theme.colors.text1};
   h3 {
     font-size: 1.8rem;
     font-weight: bold;
@@ -67,7 +67,7 @@ const CardHeader = styled.div`
 
   p {
     font-size: 1rem;
-    color: ${({ theme }) => theme.colors.secondaryText};
+   
     margin: 0.5rem 0;
   }
 `;
@@ -77,6 +77,6 @@ const CardBody = styled.div`
 
   p {
     font-size: 1rem;
-    color: ${({ theme }) => theme.colors.text};
+    color: ${({ theme }) => theme.colors.text1};
   }
 `;

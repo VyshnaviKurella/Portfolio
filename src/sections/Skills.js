@@ -11,16 +11,16 @@ const skills = [
   { name: "Python", icon: <FaPython /> },
   { name: "React.js", icon: <FaReact /> },
   { name: "AngularJS", icon: <FaAngular /> },
-  { name: "Vue.js", icon: <FaVuejs /> }, // You can use another icon or custom one for Vue.js
+  { name: "Vue.js", icon: <FaVuejs /> },
   { name: "Redux", icon: <SiRedux /> },
   { name: "Bootstrap", icon: <SiBootstrap /> },
   // { name: "Material UI", icon: <SiMaterialUi /> },
   { name: "Node.js", icon: <FaNodeJs /> },
-  { name: "Express.js", icon: <FaNodeJs /> }, // Use the same Node.js icon, since Express is often used with it
+  { name: "Express.js", icon: <FaNodeJs /> }, 
   { name: "GraphQL", icon: <SiGraphql /> },
   { name: "MongoDB", icon: <FaDatabase /> },
-  { name: "SQL", icon: <SiMysql /> }, // Placeholder for SQL icon, adjust if needed
-  // { name: "Amazon EC2", icon: <SiAmazonaws /> }, // Use AWS icons, if available
+  { name: "SQL", icon: <SiMysql /> }, 
+  // { name: "Amazon EC2", icon: <SiAmazonaws /> },
   { name: "Jenkins", icon: <SiJenkins /> },
   { name: "Kubernetes", icon: <SiKubernetes /> },
   { name: "Docker", icon: <SiDocker /> },
@@ -28,7 +28,7 @@ const skills = [
   { name: "GitHub", icon: <SiGithub /> },
   { name: "Postman", icon: <SiPostman /> },
   { name: "Mocha", icon: <SiMocha /> },
-  // { name: "Jasmine", icon: <SiJasmine /> }, // Adjust if you have an icon for Jasmine
+  // { name: "Jasmine", icon: <SiJasmine /> },
   { name: "Jest", icon: <SiJest /> },
   { name: "VS Code", icon: <SiVisualstudiocode /> },
   // { name: "Eclipse", icon: <SiEclipsemosquitto /> },
@@ -41,7 +41,7 @@ const skills = [
 
 const Skills = () => {
   return (
-    <SkillsContainer>
+    <SkillsContainer id="skills">
       <h1>My Skills</h1>
       <SkillWrapper>
         <SkillList>
@@ -80,7 +80,7 @@ const Skills = () => {
 export default Skills;
 
 const SkillsContainer = styled.div`
-  margin: 8rem 2rem;
+  padding: 8rem 2rem;
   text-align: center;
   background-color: ${({ theme }) => theme.colors.backgrounds.background1};
   color: ${({ theme }) => theme.colors.text};

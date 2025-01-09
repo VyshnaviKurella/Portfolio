@@ -44,20 +44,14 @@ const Header = () => {
         <span />
       </Hamburger>
       <Navas $isOpen={isOpen}>
-        <motion.li
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-          onClick={() => handleNavigation('projects')}
-        >
-          Projects
-        </motion.li>
-        <motion.li
+      <motion.li
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
           onClick={() => handleNavigation('skills')}
         >
           Skills
         </motion.li>
+
         <motion.li
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
@@ -65,6 +59,16 @@ const Header = () => {
         >
           Experience
         </motion.li>
+        
+        <motion.li
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.95 }}
+          onClick={() => handleNavigation('projects')}
+        >
+          Projects
+        </motion.li>
+        
+        
         <motion.li
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
@@ -74,7 +78,7 @@ const Header = () => {
         </motion.li>
       </Navas>
     </NavBar>
-    <PatternContainer/>
+    
     </>
   );
 };
@@ -110,12 +114,13 @@ const Navas = styled.ul`
   gap: 2rem;
   list-style: none;
   cursor:pointer;
+  font-size: 1.1rem;
+  font-weight: 600;
 
   li {
     a {
       text-decoration: none;
       color: ${({ theme }) => theme.colors.text};
-      font-size: 1.1rem;
       transition: color 0.3s;
 
       &:hover {
@@ -129,9 +134,9 @@ const Navas = styled.ul`
     flex-direction: column;
     gap: 1rem;
     position: absolute;
-    hrefp: 70px;
-    right: 10px;
-    background: ${({ theme }) => theme.colors.secondary};
+    top:80%;
+    right: 0px;
+    background: ${({ theme }) => theme.colors.accent};
     padding: 1rem;
     border-radius: 8px;
   }
@@ -146,7 +151,7 @@ const Hamburger = styled.div`
     height: 3px;
     width: 25px;
     background: ${({ theme }) => theme.colors.text};
-    margin-bothrefm: 4px;
+    margin-bottom: 4px;
     border-radius: 5px;
   }
 
@@ -154,6 +159,4 @@ const Hamburger = styled.div`
     display: flex;
   }
 `;
-const PatternContainer = styled.div`
- 
-`;
+

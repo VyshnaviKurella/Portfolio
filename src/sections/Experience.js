@@ -158,13 +158,13 @@ const Experience = () => {
   <Company>{selectedExperience.company}</Company>
   <Duration>{selectedExperience.duration}</Duration>
   <Details>{selectedExperience.details}</Details>
-  <ContributionsTitle>Key Contributions:</ContributionsTitle>
+  <ContributionsTitle>Key Contributions</ContributionsTitle>
   <ContributionsList>
     {selectedExperience.contributions.map((contribution, index) => (
       <li key={index}>{contribution}</li>
     ))}
   </ContributionsList>
-  <CloseButton onClick={closePopup}>Close</CloseButton>
+  <CloseButton onClick={closePopup}>CLOSE</CloseButton>
 </Popup>
 
           </motion.div>
@@ -209,25 +209,12 @@ const PopupOverlay = styled.div`
 `;
 
 const Popup = styled.div`
-  background-color: ${({ theme }) => theme.colors.primary};
+  background-color: ${({ theme }) => theme.colors.accent};
   padding: 2rem;
   border-radius: 10px;
-    width: 52vw;
+  width: 52vw;
   color: ${({ theme }) => theme.colors.text};
 
-  button {
-    background-color: ${({ theme }) => theme.colors.accent};
-    border: none;
-    padding: 10px;
-    color: white;
-    font-size: 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px;
-
-    &:hover {
-      background-color: ${({ theme }) => theme.colors.accentHover};
-    }
   }
 `;
 const ViewText = styled.div`
@@ -246,7 +233,7 @@ const ViewText = styled.div`
 const Company = styled.p`
   font-weight: bold;
   font-size: 1.2rem;
-  color: ${({ theme }) => theme.colors.accent};
+  color: ${({ theme }) => theme.colors.text};
   margin: 0.5rem 0;
 `;
 
@@ -261,13 +248,14 @@ const Details = styled.p`
   color: ${({ theme }) => theme.colors.text};
   line-height: 1.6;
   margin: 1rem 0;
+  text-align:left;
 `;
 
 const ContributionsTitle = styled.h3`
   font-size: 1.2rem;
   font-weight: bold;
-  color: ${({ theme }) => theme.colors.primaryText};
-  margin: 1rem 0 0.5rem;
+  color: ${({ theme }) => theme.colors.text};
+  margin: 1rem ;
 `;
 
 const ContributionsList = styled.ul`
@@ -278,13 +266,14 @@ const ContributionsList = styled.ul`
 
   li {
     margin-bottom: 0.5rem;
+    text-align:left
   }
 `;
 
 const CloseButton = styled.button`
   margin-top: 1rem;
   padding: 0.8rem 1.5rem;
-  background-color: ${({ theme }) => theme.colors.accent};
+  background-color: ${({ theme }) => theme.colors.text};
   color: white;
   font-size: 1rem;
   font-weight: bold;
@@ -294,6 +283,6 @@ const CloseButton = styled.button`
   transition: background-color 0.3s ease;
 
   &:hover {
-    background-color: ${({ theme }) => theme.colors.accentHover};
+    background-color: ${({ theme }) => theme.colors.accentText};
   }
 `;

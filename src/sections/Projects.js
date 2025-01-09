@@ -171,22 +171,21 @@ const Projects = () => {
             transition={{ type: 'spring', stiffness: 100 }}
           >
             <Popup>
-              <h2>{selectedProject.title}</h2>
+              <h1>{selectedProject.title}</h1>
               
-              <p>{selectedProject.details.overview}</p>
-              <div>
-                <p> Tools Used:</p>
+              <div>{selectedProject.details.overview}</div>
+                <h3> Technologies</h3>
               <p>{selectedProject.details.tools}</p>
-              </div>
+              
               <div>
-                <p> My Contribution </p>
+                <h3> My Contribution </h3>
                 <ContributionsList>
           {selectedProject.details.contributions.map((contribution, index) => (
             <li key={index}>{contribution}</li>
           ))}
         </ContributionsList>
               </div>          
-              <button onClick={closePopup}>Close</button>
+              <CloseButton onClick={closePopup}>CLOSE</CloseButton>
             </Popup>
           </motion.div>
         </PopupOverlay>
@@ -247,28 +246,41 @@ const PopupOverlay = styled.div`
 `;
 
 const Popup = styled.div`
-  background-color: ${({ theme }) => theme.colors.primary};
+  background-color: ${({ theme }) => theme.colors.accent};
   padding: 2rem;
   border-radius: 10px;
   width: 50vw;
   color: ${({ theme }) => theme.colors.text};
+  
+  h3,p {
+  text-align:center;
+  padding: 0.1em;
+}
+  div{
+  text-align:left;
+  margin-top: 10px;
+  padding: 0.5rem;
+  }
 
-  button {
-    background-color: ${({ theme }) => theme.colors.accent};
-    border: none;
-    padding: 10px;
-    color: white;
-    font-size: 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px;
-
-    &:hover {
-      background-color: ${({ theme }) => theme.colors.accentHover};
-    }
   }
 `;
+const CloseButton = styled.button`
+  margin-top: 1rem;
+  padding: 0.8rem 1.5rem;
+  background-color: ${({ theme }) => theme.colors.text};
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.accentText};
+  }
+
+`;
 
 const ContributionsList = styled.ul`
   margin-top: 1rem;
@@ -278,5 +290,6 @@ const ContributionsList = styled.ul`
   li {
     margin-bottom: 0.5rem;
     line-height: 1.5;
+    text-align:left;
   }
 `;
