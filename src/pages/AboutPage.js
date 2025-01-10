@@ -78,7 +78,7 @@ const AboutSection = () => {
           </p>
         </Content>
         <span className="image-container">
-          <img src={hiker} alt="hiking img" />
+          <img src={hiker} loading="lazy" alt="hiking img" />
         </span>
       </SectionBackground>
 
@@ -96,8 +96,8 @@ const AboutSection = () => {
             experience.
           </div>
           <Gallery>
-            <img src={defcon1} alt="Defcon'23" />
-            <img src={defcon2} alt="Defcon'23" />
+            <img src={defcon1} loading="lazy"alt="Defcon'23" />
+            <img src={defcon2} loading="lazy" alt="Defcon'23" />
           </Gallery>
           <div>
             <strong>Maker’s Mart at UC Irvine Project Expo:</strong> I presented
@@ -106,9 +106,9 @@ const AboutSection = () => {
             experience in building full-stack applications.
           </div>
           <Gallery>
-            <img src={UCIexpo1} alt="Maker's Mart Team" />
-            <img src={UCIexpo2} alt="Maker's Mart Team" />
-            <img src={UCIexpo3} alt="Maker's Mart Team" />
+            <img src={UCIexpo1} loading="lazy" alt="Maker's Mart Team" />
+            <img src={UCIexpo2} loading="lazy" alt="Maker's Mart Team" />
+            <img src={UCIexpo3} loading="lazy" alt="Maker's Mart Team" />
           </Gallery>
         </Content>
       </SectionBackground>

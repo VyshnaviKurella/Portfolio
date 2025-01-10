@@ -43,7 +43,7 @@ const HeroSection = () => {
 
         <StyledLink to="/about">Know Me</StyledLink>
         <div className="image-container">
-          <img src={working} alt="girl working img" />
+          <img src={working} loading="lazy" alt="girl working img" />
         </div>
       </ProfessionalSection>
     </HeroContainer>
