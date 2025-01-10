@@ -127,39 +127,16 @@ const Projects = () => {
     <ProjectsContainer id="projects-section" onMouseMove={handleMouseMove}>
       <Title>My Projects</Title>
       <ProjectsGrid>
-        {projects.map((project, index) => (
-          <motion.div
-            key={project.id}
-            initial={{
-              x: index % 2 === 0 ? "-100vw" : "100vw", // Slide in alternately from left and right
-              opacity: 0,
-            }}
-            whileInView={{
-              x: 0,
-              opacity: 1,
-              viewport: { once: false, amount: 0.5 },
-            }}
-            transition={{
-              type: "spring",
-              stiffness: 100,
-              damping: 20,
-              delay: 0.35 * index, // Stagger animation for each card
-            }}
-            animate={{
-              transform: "translateX(0)",
-              opacity: 1,
-            }}
-          >
-            <ProjectCard
-              title={project.title}
-              description={project.description}
-              tech={project.tech}
-              type="project"
-              onClick={() => openPopup(project)}
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-            />
-          </motion.div>
+        {projects.map((project) => (
+          <ProjectCard
+            title={project.title}
+            description={project.description}
+            tech={project.tech}
+            type="project"
+            onClick={() => openPopup(project)}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          />
         ))}
       </ProjectsGrid>
       {isHovering && (

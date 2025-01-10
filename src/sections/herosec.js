@@ -24,7 +24,7 @@ const HeroSection = () => {
             ))}
           </h1>
 
-          <motion.p
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 2, duration: 1 }}
@@ -38,7 +38,7 @@ const HeroSection = () => {
               I’m not coding, I’m either conquering peaks or enjoying a
               well-earned movie marathon.
             </div>
-          </motion.p>
+          </motion.div>
         </HeroText>
 
         <StyledLink to="/about">Know Me</StyledLink>

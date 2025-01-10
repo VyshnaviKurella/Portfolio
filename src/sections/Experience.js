@@ -97,47 +97,20 @@ const Experience = () => {
     setIsHovering(false);
   };
   return (
-    <ExperienceContainer
-      id="experience-section"
-      onMouseMove={handleMouseMove}
-      //   style={{ opacity: visible ? 1 : 0, transition: 'opacity 0.5s ease' }}
-    >
+    <ExperienceContainer id="experience-section" onMouseMove={handleMouseMove}>
       <Title>My Experience</Title>
       <ExperienceList>
-        {experiences.map((exp, index) => (
-          <motion.div
-            key={exp.id}
-            initial={{
-              x: index % 2 === 0 ? "-100vw" : "100vw",
-              opacity: 0,
-            }}
-            animate={{
-              transform: "translateX(0)",
-              opacity: 1,
-            }}
-            transition={{
-              type: "spring",
-              stiffness: 100,
-              damping: 20,
-              delay: 0.3 * index, // Stagger animation
-            }}
-            whileInView={{
-              x: 0,
-              opacity: 1,
-            }}
-            viewport={{ once: false, amount: 0.5 }}
-          >
-            <ProjectCard
-              title={exp.role}
-              description={exp.summary}
-              company={exp.company}
-              duration={exp.duration}
-              type="experience"
-              onClick={() => openPopup(exp)}
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-            />
-          </motion.div>
+        {experiences.map((exp) => (
+          <ProjectCard
+            title={exp.role}
+            description={exp.summary}
+            company={exp.company}
+            duration={exp.duration}
+            type="experience"
+            onClick={() => openPopup(exp)}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          />
         ))}
       </ExperienceList>
       {isHovering && (
