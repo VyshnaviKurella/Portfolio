@@ -15,7 +15,7 @@ const AboutSection = () => {
       <Content>
         <div className="intro">
           <Gallery>
-            <img src={Profile} alt="profile picture" />
+            <img src={Profile} alt="profile" />
           </Gallery>
           <p>
             Hi! I’m <strong>Vyshnavi Kurella</strong>, a{" "}
