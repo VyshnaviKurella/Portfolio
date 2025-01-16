@@ -24,21 +24,22 @@ const HeroSection = () => {
             ))}
           </h1>
 
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 2, duration: 1 }}
-          >
-            <Tagline>Turning Ideas into Code, One Project at a Time</Tagline>
-            <p className="content">
-              Developer, ML enthusiast, and a problem solver at heart. I thrive
-              on creating sleek, impactful solutions that transform ideas into
-              reality. Known for my adaptability and dedication, I navigate both
-              mountain trails and codebases with the same determination. When
-              I’m not coding, I’m either conquering peaks or enjoying a
-              well-earned movie marathon.
-            </p>
-          </motion.p>
+          <motion.div
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ delay: 2, duration: 1 }}
+>
+  <Tagline>Turning Ideas into Code, One Project at a Time</Tagline>
+  <div className="content">
+    Developer, ML enthusiast, and a problem solver at heart. I thrive
+    on creating sleek, impactful solutions that transform ideas into
+    reality. Known for my adaptability and dedication, I navigate both
+    mountain trails and codebases with the same determination. When
+    I’m not coding, I’m either conquering peaks or enjoying a
+    well-earned movie marathon.
+  </div>
+</motion.div>
+
         </HeroText>
 
         <StyledLink to="/about">Know Me</StyledLink>
@@ -69,7 +70,7 @@ const ProfessionalSection = styled.div`
   align-items: center;
   text-align: center;
   padding: 5rem;
-
+margin-top: 5rem;
   .image-container {
     display: flex;
     position: absolute;
@@ -147,19 +148,22 @@ const HeroText = styled.div`
     }
   }
 
-  .content {
-    font-size: inherit;
-    padding: 15px 4rem;
-    text-align: center;
+.content {
+  font-size: 1.2em;
+  padding: 15px 4rem;
+  text-align: center;
+  color: ${({ theme }) => theme.colors.secondaryText};
 
-    @media (max-width: 768px) {
-      padding: 15px 1rem;
-    }
+  @media (max-width: 768px) {
+    padding: 15px 1rem;
+  }
 
-    @media (max-width: 480px) {
-      font-size: 1.2rem;
-      padding: 10px 0.2rem;
-    }
+  @media (max-width: 480px) {
+    font-size: 1.2rem;
+    padding: 10px 0.2rem;
+  }
+}
+
   }
 `;
 const Tagline = styled.div`
@@ -168,4 +172,8 @@ const Tagline = styled.div`
   font-family: "Dancing Script", cursive;
   margin-top: 0.5rem;
   color: ${({ theme }) => theme.colors.secondaryText};
+    @media (max-width: 480px) {
+    font-size: 1.2rem;
+  
+  }
 `;
