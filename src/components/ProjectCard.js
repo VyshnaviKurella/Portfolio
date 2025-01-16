@@ -67,6 +67,7 @@ const Card = styled.div`
 
   @media (max-width: 480px) {
     padding: 1rem;
+     height: auto;
   }
 `;
 
