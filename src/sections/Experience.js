@@ -102,6 +102,7 @@ const Experience = () => {
       <ExperienceList>
         {experiences.map((exp) => (
           <ProjectCard
+            key={exp.id}
             title={exp.role}
             description={exp.summary}
             company={exp.company}
@@ -156,7 +157,7 @@ export default Experience;
 // Styled Components
 
 const ExperienceContainer = styled.div`
-  padding: 4rem 14rem;
+  padding: 4rem 12rem;
   text-align: center;
   background-color: ${({ theme }) => theme.colors.backgrounds.background1};
   @media (max-width: 768px) {
@@ -165,7 +166,7 @@ const ExperienceContainer = styled.div`
 `;
 const Title = styled.h1`
   font-size: 2.5rem;
-  color: ${({ theme }) => theme.colors.accent};
+  color: ${({ theme }) => theme.colors.text};
   margin-bottom: 2rem;
 `;
 
@@ -190,6 +191,7 @@ const PopupOverlay = styled.div`
 `;
 
 const Popup = styled.div`
+margin: 6rem 0 0 0;
   background-color: ${({ theme }) => theme.colors.accent};
   padding: 2rem;
   border-radius: 10px;
@@ -217,8 +219,11 @@ const Popup = styled.div`
 const ViewText = styled.div`
   position: fixed;
   font-size: 1.2rem;
-  color: black;
-  background-color: ${({ theme }) => theme.colors.accentText};
+  fontweight:600;
+  font-family: "Dancing Script", cursive;
+    color: ${({ theme }) => theme.colors.text1};
+  background-color: ${({ theme }) => theme.colors.secondary};
+
   padding: 20px 15px;
   border-radius: 50%;
   pointer-events: none;
@@ -270,7 +275,7 @@ const ContributionsList = styled.ul`
 const CloseButton = styled.button`
   margin-top: 1rem;
   padding: 0.8rem 1.5rem;
-  background-color: ${({ theme }) => theme.colors.text};
+  background-color: ${({ theme }) => theme.colors.secondary};
   color: white;
   font-size: 1rem;
   font-weight: bold;

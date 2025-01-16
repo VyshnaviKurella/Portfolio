@@ -24,21 +24,21 @@ const HeroSection = () => {
             ))}
           </h1>
 
-          <motion.div
+          <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 2, duration: 1 }}
           >
             <Tagline>Turning Ideas into Code, One Project at a Time</Tagline>
-            <div>
+            <p className="content">
               Developer, ML enthusiast, and a problem solver at heart. I thrive
               on creating sleek, impactful solutions that transform ideas into
               reality. Known for my adaptability and dedication, I navigate both
               mountain trails and codebases with the same determination. When
               I’m not coding, I’m either conquering peaks or enjoying a
               well-earned movie marathon.
-            </div>
-          </motion.div>
+            </p>
+          </motion.p>
         </HeroText>
 
         <StyledLink to="/about">Know Me</StyledLink>
@@ -129,6 +129,7 @@ const HeroText = styled.div`
     font-family: "Poppins", sans-serif;
     font-weight: bold;
     margin-bottom: 1rem;
+    
     color: ${({ theme }) => theme.colors.text};
 
     @media (max-width: 480px) {
@@ -146,7 +147,7 @@ const HeroText = styled.div`
     }
   }
 
-  div {
+  .content {
     font-size: inherit;
     padding: 15px 4rem;
     text-align: center;
@@ -162,7 +163,7 @@ const HeroText = styled.div`
   }
 `;
 const Tagline = styled.div`
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-style: italic;
   font-family: "Dancing Script", cursive;
   margin-top: 0.5rem;

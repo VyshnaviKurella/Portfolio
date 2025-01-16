@@ -31,7 +31,7 @@ const Projects = () => {
     },
     {
       id: 2,
-      title: "Crop Disease Detection (Hackathon Project - ACI 2018, GRIET)",
+      title: "Crop Disease Detection (Hackathon Project, GRIET)",
       description:
         "A machine learning model that identifies crop diseases based on leaf images, trained using the Random Forest classifier with an accuracy of 70%.",
       tech: "Python, Machine Learning, Random Forest Classifier",
@@ -129,6 +129,7 @@ const Projects = () => {
       <ProjectsGrid>
         {projects.map((project) => (
           <ProjectCard
+            key={project.id}
             title={project.title}
             description={project.description}
             tech={project.tech}
@@ -163,7 +164,6 @@ const Projects = () => {
               <div>{selectedProject.details.overview}</div>
               <h3> Technologies</h3>
               <p>{selectedProject.details.tools}</p>
-
               <div>
                 <h3> My Contribution </h3>
                 <ContributionsList>
@@ -200,7 +200,7 @@ const ProjectsContainer = styled.div`
 
 const Title = styled.h1`
   font-size: 2.5rem;
-  color: ${({ theme }) => theme.colors.accent};
+  color: ${({ theme }) => theme.colors.text};
   margin-bottom: 2rem;
   padding-top: 1rem;
 `;
@@ -210,8 +210,7 @@ const ProjectsGrid = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 2rem;
   justify-items: center;
-  align-items: stretch;
-  margin-top: 2rem;
+   margin-top: 2rem;
 
   @media (max-width: 480px) {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -221,8 +220,11 @@ const ProjectsGrid = styled.div`
 const ViewText = styled.div`
   position: fixed;
   font-size: 1.2rem;
-  color: black;
-  background-color: ${({ theme }) => theme.colors.accentText};
+   fontweight:600;
+   font-family: "Dancing Script", cursive;
+  color: ${({ theme }) => theme.colors.text1};
+
+  background-color: ${({ theme }) => theme.colors.secondary};
   padding: 20px 15px;
   border-radius: 50%;
   pointer-events: none;
@@ -247,19 +249,24 @@ const PopupOverlay = styled.div`
 
 const Popup = styled.div`
   background-color: ${({ theme }) => theme.colors.accent};
+  margin: 6rem 0 0 0;
   padding: 2rem;
   border-radius: 10px;
   width: 50vw;
   color: ${({ theme }) => theme.colors.text};
 
+  h1{
+  padding:1rem;
+  }
   h3,
   p {
     text-align: center;
-    padding: 0.1em;
+    padding: 0.5rem;
+    
   }
   div {
     text-align: left;
-    margin-top: 10px;
+    // margin-top: 1.5rem;
     padding: 0.5rem;
   }
 
@@ -281,10 +288,12 @@ const Popup = styled.div`
     padding: 1rem;
   }
 `;
+
+
 const CloseButton = styled.button`
   margin-top: 1rem;
   padding: 0.8rem 1.5rem;
-  background-color: ${({ theme }) => theme.colors.text};
+  background-color: ${({ theme }) => theme.colors.secondary};
   color: white;
   font-size: 1rem;
   font-weight: bold;
@@ -309,3 +318,5 @@ const ContributionsList = styled.ul`
     text-align: left;
   }
 `;
+
+

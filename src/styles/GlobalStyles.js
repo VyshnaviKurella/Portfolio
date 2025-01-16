@@ -9,7 +9,7 @@ const GlobalStyles = createGlobalStyle`
 }
 
 body {
-font-family : 'Montserrat',sans-serif;
+font-family: 'Roboto', sans-serif;
 background-color: ${({ theme }) => theme.colors.backgrounds.background1};
 color: ${({ theme }) => theme.colors.text};
 }

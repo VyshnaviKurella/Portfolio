@@ -16,7 +16,6 @@ const ContactLinks = () => {
         <a href="https://github.com/VyshnaviKurella" target="_blank" rel="noopener noreferrer">
           <FaGithub size={30} /> GitHub
         </a>
-    
       </Links>
     </ContactContainer>
   );
@@ -33,6 +32,20 @@ const ContactContainer = styled.div`
     font-size: 2.5rem;
     color: ${({ theme }) => theme.colors.accent};
     margin-bottom: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    padding: 3rem 1rem;
+    h1 {
+      font-size: 2rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 2rem 1rem;
+    h1 {
+      font-size: 1.8rem;
+    }
   }
 `;
 
@@ -52,6 +65,24 @@ const Links = styled.div`
 
     &:hover {
       color: ${({ theme }) => theme.colors.accent};
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    a {
+      font-size: 1.1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    gap: 0.8rem;
+
+    a {
+      font-size: 1rem;
     }
   }
 `;

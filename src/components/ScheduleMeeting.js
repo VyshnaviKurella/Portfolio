@@ -25,9 +25,19 @@ const ScheduleContainer = styled.div`
     color: ${({ theme }) => theme.colors.accent};
     margin-bottom: 2rem;
   }
-  @media (max-width: 480px) {
-    padding: 0.25rem;
+
+    @media (max-width: 768px) {
+    h1 {
+      font-size: 2rem;
+    }
   }
+
+  @media (max-width: 480px) {
+   padding: 0.25rem;
+    h1 {
+      font-size: 1.8rem;
+    }
+
 `;
 const InlineWidgetWrapper = styled.div`
   width: 100%;
